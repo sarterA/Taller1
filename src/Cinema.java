@@ -4,23 +4,31 @@ public class Cinema {
 //atributos
     private String nom;
     private int sales;
-    private ArrayList<Pelicula> peliculas;
+    private Pelicula [] peliculas; //array atributo
 
-//constructor
-    public Cinema(String nom, int sales, ArrayList<Pelicula> peliculas) {
+
+    //constructor
+    public Cinema(String nom, int sales, Pelicula [] peliculas) {
         this.nom = nom;
         this.sales = sales;
-        peliculas = new ArrayList<Pelicula>();
+        this.peliculas = peliculas;  //constructor array atributo
 
     }
+
+//ARRAY usando get y parametros
+
     public Pelicula peliculaMesLlarga(){
-        Pelicula arr;
+        int duracio = 0;
 
-        arr = new Pelicula("Coches", 2, "D.palacio");
-        arr = new Pelicula("Jober", 140, "J. Dimecres");
+        Pelicula pelicula = new Pelicula("",0,"");
+        for (int i = 0; i < this.peliculas.length; i++) {
+            if (this.peliculas[i].getDuracio() > duracio) {
 
+                duracio = this.peliculas[i].getDuracio();
+                pelicula = this.peliculas[i];
+            }
+        }
+        return pelicula;
 
-        System.out.println(arr);
-        return null;
     }
 }

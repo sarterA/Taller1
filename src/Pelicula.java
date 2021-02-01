@@ -1,5 +1,7 @@
 public class Pelicula {
 
+// ATRIBUTO
+
     private String titol;
     private int duracio;
     private String director;
@@ -17,10 +19,10 @@ public class Pelicula {
 
 // GET
 
-    private String titol() {
+    private String getTitol() {
         return this.titol;
     }
-    private int duracio() {
+    int getDuracio() {
         return this.duracio;
     }
 
